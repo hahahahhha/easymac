@@ -16,11 +16,11 @@ import java.io.File
 
 import scala.io.Source
 
-
+//sys
 object test {
   val usage =
     """
-      Usage: generate [--compressor-file filename1] [--prefix-adder-file filename2] [--accumulator-file filename3]
+      Usage: generate [--compressor-file filename1] [--prefix-adder-file filename2] [--accumulator-file filename3] 
   """
 
   def main(args: Array[String]): Unit = {
