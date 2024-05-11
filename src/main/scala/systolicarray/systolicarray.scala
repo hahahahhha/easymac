@@ -15,8 +15,12 @@ import java.io.PrintWriter
 import java.io.File
 
 import scala.io.Source
+class systolicPE extends Module {
+  val io=IO(new Bundle{
+    val a=1
+  })
+}
 
-//sys
 object test {
   val usage =
     """
@@ -92,7 +96,7 @@ object test {
     val topDesign = () => new MAC(m, n, myarchw, inedges, outedges, res, myarcha, pedge, gedge, pos, myarcha2, pedge2, gedge2, pos2)
     (new chisel3.stage.ChiselStage).emitVerilog(topDesign(), Array("-td", "./RTL/mac"))
     iotesters.Driver.execute(Array("-tgvo", "on", "-tbn", "verilator"), topDesign) {
-      c => new MACTester(c)
+      c => new SystolicarrayTester(c)
     }
   }
 }
