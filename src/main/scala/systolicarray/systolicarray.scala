@@ -100,7 +100,7 @@ object test {
     }
   }
 }
-//aa
+//a
 class SystolicarrayTester(c: MAC) extends PeekPokeTester(c) {
   poke(c.io.multiplicand, 7)
   poke(c.io.multiplier, 2)
