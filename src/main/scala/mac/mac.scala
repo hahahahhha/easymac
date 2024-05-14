@@ -88,7 +88,6 @@ object test {
 
     val m = ReadWT.getBits(filecontent)(0)
     val n = ReadWT.getBits(filecontent)(1)
-    
     // wallace tree
     val numcompressors = ReadWT.getNumCells(filecontent)(0)
 
