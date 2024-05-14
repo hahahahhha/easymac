@@ -10,7 +10,7 @@ class Hello extends Module {
   val io = IO(new Bundle {
     val out = Output(UInt(8.W))
   })
-  io.out := 42.U
+  io.out := 42.U//
 }
 
 class HelloTests(c: Hello) extends PeekPokeTester(c) {
