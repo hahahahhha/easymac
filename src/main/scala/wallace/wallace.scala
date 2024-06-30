@@ -13,8 +13,8 @@ import scala.io.Source
 class Wallace(m: Int, n: Int, myarch: List[Int], inedges: Map[List[Int], List[Int]], outedges: Map[List[Int], List[Int]], res: Map[Int, List[Int]]) extends Module {
   val io = IO(new Bundle {
     val pp = Input(Vec(n, UInt(m.W)))
-    val augend = Output(UInt((n + m).W))
-    val addend = Output(UInt((n + m).W))
+    val augend = Output(UInt((n + m -1).W))
+    val addend = Output(UInt((n + m -1).W))
   })
 
   var ValueMap = Map[List[Int], Data]()

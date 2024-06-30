@@ -1,0 +1,29 @@
+[
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~MACd|MACd>io_outs",
+    "sources":[
+      "~MACd|MACd>io_addend",
+      "~MACd|MACd>io_multiplicand_0",
+      "~MACd|MACd>io_multiplier_0",
+      "~MACd|MACd>io_multiplicand_1",
+      "~MACd|MACd>io_multiplier_1"
+    ]
+  },
+  {
+    "class":"firrtl.options.TargetDirAnnotation",
+    "directory":"./RTL/macd"
+  },
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.options.OutputAnnotationFileAnnotation",
+    "file":"MACd"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"./RTL/macd"
+  }
+]

@@ -4665,7 +4665,7 @@ circuit MAC :
   module Wallace : 
     input clock : Clock
     input reset : Reset
-    output io : {flip pp : UInt<16>[16], augend : UInt<32>, addend : UInt<32>}
+    output io : {flip pp : UInt<16>[16], augend : UInt<31>, addend : UInt<31>}
     
     node _T = bits(io.pp[0], 0, 0) @[wallace.scala 34:43]
     node _T_1 = bits(io.pp[0], 1, 1) @[wallace.scala 34:43]

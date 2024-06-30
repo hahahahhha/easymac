@@ -364,8 +364,8 @@ module Wallace(
   input  [15:0] io_pp_13,
   input  [15:0] io_pp_14,
   input  [15:0] io_pp_15,
-  output [31:0] io_augend,
-  output [31:0] io_addend
+  output [30:0] io_augend,
+  output [30:0] io_addend
 );
   wire  FullAdder_io_a; // @[wallace.scala 63:25]
   wire  FullAdder_io_b; // @[wallace.scala 63:25]
@@ -1446,7 +1446,7 @@ module Wallace(
   wire  res0_3 = FullAdder_124_io_s; // @[wallace.scala 74:49 wallace.scala 79:13]
   wire [27:0] _T_282 = {_T_273,res0_11,res0_10,res0_9,res0_8,res0_7,res0_6,res0_5,res0_4,res0_3}; // @[Cat.scala 29:58]
   wire  res0_2 = FullAdder_74_io_s; // @[wallace.scala 74:49 wallace.scala 79:13]
-  wire [30:0] _T_285 = {_T_282,res0_2,res0_1,res0_0}; // @[Cat.scala 29:58]
+  wire [29:0] _T_284 = {_T_282,res0_2,res0_1}; // @[Cat.scala 29:58]
   wire  res1_30 = FullAdder_75_io_co; // @[wallace.scala 75:49 wallace.scala 83:15]
   wire  res1_29 = FullAdder_125_io_co; // @[wallace.scala 75:49 wallace.scala 83:15]
   wire  res1_28 = FullAdder_157_io_co; // @[wallace.scala 75:49 wallace.scala 83:15]
@@ -1470,7 +1470,7 @@ module Wallace(
   wire  res1_11 = FullAdder_202_io_co; // @[wallace.scala 75:49 wallace.scala 83:15]
   wire  res1_8 = FullAdder_203_io_co; // @[wallace.scala 75:49 wallace.scala 83:15]
   wire [27:0] _T_312 = {_T_303,res1_11,1'h0,1'h0,res1_8,1'h0,1'h0,1'h0,1'h0,1'h0}; // @[Cat.scala 29:58]
-  wire [30:0] _T_315 = {_T_312,1'h0,res1_1,1'h0}; // @[Cat.scala 29:58]
+  wire [29:0] _T_314 = {_T_312,1'h0,res1_1}; // @[Cat.scala 29:58]
   FullAdder FullAdder ( // @[wallace.scala 63:25]
     .io_a(FullAdder_io_a),
     .io_b(FullAdder_io_b),
@@ -2935,8 +2935,8 @@ module Wallace(
     .io_s(FullAdder_203_io_s),
     .io_co(FullAdder_203_io_co)
   );
-  assign io_augend = {{1'd0}, _T_285}; // @[wallace.scala 86:13]
-  assign io_addend = {{1'd0}, _T_315}; // @[wallace.scala 87:13]
+  assign io_augend = {_T_284,res0_0}; // @[wallace.scala 86:13]
+  assign io_addend = {_T_314,1'h0}; // @[wallace.scala 87:13]
   assign FullAdder_io_a = io_pp_13[15]; // @[wallace.scala 65:18]
   assign FullAdder_io_b = io_pp_14[14]; // @[wallace.scala 66:18]
   assign FullAdder_io_ci = io_pp_15[13]; // @[wallace.scala 67:19]
@@ -5162,8 +5162,8 @@ module MAC(
   wire [15:0] wt_io_pp_13; // @[mac.scala 32:18]
   wire [15:0] wt_io_pp_14; // @[mac.scala 32:18]
   wire [15:0] wt_io_pp_15; // @[mac.scala 32:18]
-  wire [31:0] wt_io_augend; // @[mac.scala 32:18]
-  wire [31:0] wt_io_addend; // @[mac.scala 32:18]
+  wire [30:0] wt_io_augend; // @[mac.scala 32:18]
+  wire [30:0] wt_io_addend; // @[mac.scala 32:18]
   wire  ppa1_clock; // @[mac.scala 35:20]
   wire  ppa1_reset; // @[mac.scala 35:20]
   wire [30:0] ppa1_io_augend; // @[mac.scala 35:20]
@@ -5249,8 +5249,8 @@ module MAC(
   assign wt_io_pp_15 = pp_io_outs_15; // @[mac.scala 33:12]
   assign ppa1_clock = clock;
   assign ppa1_reset = reset;
-  assign ppa1_io_augend = wt_io_augend[30:0]; // @[mac.scala 36:18]
-  assign ppa1_io_addend = wt_io_addend[30:0]; // @[mac.scala 37:18]
+  assign ppa1_io_augend = wt_io_augend; // @[mac.scala 36:18]
+  assign ppa1_io_addend = wt_io_addend; // @[mac.scala 37:18]
   assign ppa2_clock = clock;
   assign ppa2_reset = reset;
   assign ppa2_io_augend = ppa1_io_outs; // @[mac.scala 40:18]
