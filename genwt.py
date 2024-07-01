@@ -77,7 +77,7 @@ def main(args):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="generate sequential wallece representation from RLMUL matrix representation")
+    parser = argparse.ArgumentParser(description="generate sequential wallece tree representation from RLMUL matrix representation")
     parser.add_argument("--s", type=str, required=True, help="source file")
     parser.add_argument("--d", type=str, required=True, help="destination file")
 
